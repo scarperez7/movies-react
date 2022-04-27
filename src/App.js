@@ -1,11 +1,13 @@
 import React from "react";
+import Movies from "./components/Movie";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <footer className="fixed-bottom text-center mt-2">
+      <Movies defaultMovie="Avengers" />
+      <footer className="fixed-bottom text-center mt-2 mb-3">
         <a
           href="https://github.com/scarperez7"
           target="_blank"
