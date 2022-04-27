@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MovieSearch from "./MovieSearch";
 import MovieListHeading from "./MovieHeader";
+import MovieList from "./MovieList";
 
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
@@ -32,6 +33,9 @@ const Movies = (props) => {
           />
         </div>
       </header>
+      <div className="row">
+        <MovieList movies={movies} />
+      </div>
     </div>
   );
 };

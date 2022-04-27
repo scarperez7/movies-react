@@ -2,3 +2,7 @@ body {
   background-color: #000024;
   color: white;
 }
+.row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
