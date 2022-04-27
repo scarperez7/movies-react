@@ -57,7 +57,7 @@ const Movies = (props) => {
         />
       </div>
       <div className=" row d-flex align-items-center mt-4 mb-4">
-        <MovieListHeading heading="Favs" />
+        <MovieListHeading heading="Favorites" />
       </div>
       <div className="row">
         <MovieList
