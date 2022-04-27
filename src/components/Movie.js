@@ -3,10 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MovieSearch from "./MovieSearch";
 import MovieListHeading from "./MovieHeader";
 import MovieList from "./MovieList";
+import addFavorite from "./AddFavorite";
+import removeFavorites from "./RemoveFavorites";
 
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState(props.defaultMovie);
+  const [favorites, setFavorites] = useState([]);
 
   const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=39375142`;
@@ -16,6 +19,19 @@ const Movies = (props) => {
     if (responseJSON.Search) {
       setMovies(responseJSON.Search);
     }
+  };
+
+  const addMovieFav = (movie) => {
+    const newFavList = [...favorites, movie];
+    setFavorites(newFavList);
+  };
+
+  const removeMovieFavs = (movie) => {
+    const newFavList = favorites.filter(
+      (favorite) => favorite.imdbID !== movie.imdbID
+    );
+
+    setFavorites(newFavList);
   };
 
   useEffect(() => {
@@ -34,7 +50,21 @@ const Movies = (props) => {
         </div>
       </header>
       <div className="row">
-        <MovieList movies={movies} />
+        <MovieList
+          movies={movies}
+          favoriteComponent={addFavorite}
+          handleFavoriteClick={addMovieFav}
+        />
+      </div>
+      <div className=" row d-flex align-items-center mt-4 mb-4">
+        <MovieListHeading heading="Favs" />
+      </div>
+      <div className="row">
+        <MovieList
+          movies={favorites}
+          favoriteComponent={removeFavorites}
+          handleFavoriteClick={removeMovieFavs}
+        />
       </div>
     </div>
   );

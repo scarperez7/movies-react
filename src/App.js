@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Movies defaultMovie="Avengers" />
-      <footer className="fixed-bottom text-center mt-2 mb-3">
+      <footer className="sticky-bottom m-2 text-center">
         <a
           href="https://github.com/scarperez7"
           target="_blank"
