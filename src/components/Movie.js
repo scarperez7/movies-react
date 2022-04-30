@@ -41,7 +41,7 @@ const Movies = (props) => {
   return (
     <div className="movies container-fluid">
       <header className="m-2">
-        <div className="row d-flex align-items-center">
+        <div className="row d-flex  align-items-center">
           <MovieListHeading heading="Movies" />
           <MovieSearch
             searchValue={searchValue}
@@ -56,7 +56,7 @@ const Movies = (props) => {
           handleFavoriteClick={addMovieFav}
         />
       </div>
-      <div className=" row d-flex align-items-center mt-4 mb-4">
+      <div className=" row d-flex align-items-center mt-4 ">
         <MovieListHeading heading="Favorites" />
       </div>
       <div className="row">
